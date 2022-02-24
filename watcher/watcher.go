@@ -125,7 +125,7 @@ func (w *Watcher) Watch() {
 	index := uint64(1000)
 	eventCh, err := w.nomad.Stream(topics, index)
 	if err != nil {
-		w.NotifyHandler(models.HandleFatal, err.Error())
+		//		w.NotifyHandler(models.HandleFatal, err.Error())
 	}
 
 	for {
