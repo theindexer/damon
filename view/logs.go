@@ -18,6 +18,8 @@ func (v *View) Logs(tasks []string, allocID, source string) {
 			v.Logs([]string{task}, allocID, source)
 		})
 
+		v.url = fmt.Sprintf("allocations/%s/%s/logs", allocID, source)
+
 		v.components.SelectorModal.Render()
 
 		v.Draw()

@@ -20,6 +20,8 @@ func (v *View) Allocations(jobID string) {
 	search := v.components.Search
 	table := v.components.AllocationTable
 
+	v.url = fmt.Sprintf("/jobs/%s", jobID)
+
 	update := func() {
 		table.Props.Data = v.filterAllocs(jobID)
 		table.Render()

@@ -1,6 +1,9 @@
 package view
 
 import (
+	"fmt"
+	"os/exec"
+
 	"github.com/hashicorp/nomad/api"
 
 	"github.com/hcjulz/damon/component"
@@ -44,6 +47,8 @@ type View struct {
 	components *Components
 
 	draw chan struct{}
+
+	url string
 }
 
 type Components struct {
@@ -112,6 +117,12 @@ func (v *View) Search() {
 	v.Layout.MainPage.ResizeItem(v.Layout.Footer, 0, 1)
 	search.Render()
 	v.Layout.Container.SetFocus(search.InputField.Primitive())
+}
+
+func (v *View) OpenInBrowser() {
+	addr := v.state.NomadAddress
+	nomadUrl := fmt.Sprintf("%s/ui%s", addr, v.url)
+	_ = exec.Command("python3", "-m", "webbrowser", nomadUrl).Start()
 }
 
 func (v *View) Draw() {

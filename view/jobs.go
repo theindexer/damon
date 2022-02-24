@@ -20,6 +20,7 @@ func (v *View) Jobs() {
 	search := v.components.Search
 	table := v.components.JobTable
 
+	v.url = "/jobs"
 	v.state.Elements.TableMain = table.Table.Primitive().(*tview.Table)
 
 	update := func() {

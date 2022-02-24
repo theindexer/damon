@@ -43,6 +43,8 @@ func (v *View) InputMainCommands(event *tcell.EventKey) *tcell.EventKey {
 
 	case tcell.KeyCtrlO, tcell.KeyEsc:
 		v.GoBack()
+	case tcell.KeyCtrlT:
+		v.OpenInBrowser()
 
 	case tcell.KeyCtrlP:
 		if !v.Layout.Footer.HasFocus() {

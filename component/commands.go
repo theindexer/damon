@@ -13,6 +13,7 @@ import (
 var (
 	MainCommands = []string{
 		fmt.Sprintf("%sCommands:", styles.HighlightSecondaryTag),
+		fmt.Sprintf("%s<ctrl-t>%s to open current page in browser", styles.HighlightPrimaryTag, styles.StandardColorTag),
 		fmt.Sprintf("%s<ctrl-j>%s to display Jobs", styles.HighlightPrimaryTag, styles.StandardColorTag),
 		fmt.Sprintf("%s<ctrl-d>%s to display Deployments", styles.HighlightPrimaryTag, styles.StandardColorTag),
 		fmt.Sprintf("%s<ctrl-n>%s to display Namespaces", styles.HighlightPrimaryTag, styles.StandardColorTag),
